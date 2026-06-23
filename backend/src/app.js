@@ -11,7 +11,8 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://ai-interview-report-generator-ktq6.vercel.app"
+      "https://ai-interview-report-generator-ktq6.vercel.app",
+      "https://ai-interview-report-generator-ktq6-abmnqedwe.vercel.app"
     ],
     credentials: true,
   })
