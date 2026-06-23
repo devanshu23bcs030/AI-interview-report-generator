@@ -1,28 +1,27 @@
-const express = require('express')
+const express = require('express');
 const cookieParser = require('cookie-parser');
-const cors = require('cors')
-const app = express()
+const cors = require('cors');
 
-app.use(express.json())
+const app = express();
+
+app.use(express.json());
 app.use(cookieParser());
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://YOUR-FRONTEND.vercel.app"
-    ],
+    origin: true,
     credentials: true,
   })
 );
+
 // Import all the routes here
-const authrouter = require('./routes/auth')
-const interviewrouter = require('./routes/interview')
-const mockinterviewrouter = require('./routes/mockinterview')
+const authrouter = require('./routes/auth');
+const interviewrouter = require('./routes/interview');
+const mockinterviewrouter = require('./routes/mockinterview');
 
 // Use the routes here
-app.use('/api/auth', authrouter)
-app.use('/api/interview', interviewrouter)
-app.use('/api/mock-interview', mockinterviewrouter)
+app.use('/api/auth', authrouter);
+app.use('/api/interview', interviewrouter);
+app.use('/api/mock-interview', mockinterviewrouter);
 
-module.exports = app
+module.exports = app;
