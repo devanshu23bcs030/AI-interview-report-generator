@@ -6,16 +6,15 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser());
 
-app.use(cors({
-    origin(origin, callback) {
-        if (!origin) return callback(null, true)
-        const allowed =
-            /^http:\/\/localhost:\d+$/.test(origin) ||
-            /^http:\/\/127\.0\.0\.1:\d+$/.test(origin)
-        callback(null, allowed)
-    },
-    credentials: true
-}))
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://YOUR-FRONTEND.vercel.app"
+    ],
+    credentials: true,
+  })
+);
 // Import all the routes here
 const authrouter = require('./routes/auth')
 const interviewrouter = require('./routes/interview')
