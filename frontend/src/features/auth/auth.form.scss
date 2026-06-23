@@ -1,0 +1,68 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1a1a1a; // lighter than pure black
+}
+
+.form-container {
+  background-color: #2a2a2a; // softer card color
+  padding: 2rem;
+  width: 380px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+  h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #f1f1f1;
+    font-size: 1.5rem;
+  }
+
+  .auth-error {
+    margin: 0 0 1rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  p{
+    margin-top: 20px;
+  }
+  p a{
+    color: royalblue;
+    text-decoration: none;
+  }
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  label {
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    color: #dddddd;
+  }
+
+  input {
+    padding: 0.6rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: whitesmoke; // lighter input
+    color: black;
+    outline: none;
+
+    &::placeholder {
+      color: gray;
+    }
+
+    &:focus {
+      border-color: #3b82f6;
+    }
+  }
+}

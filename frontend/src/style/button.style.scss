@@ -1,0 +1,22 @@
+.button{
+    width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  background: #1a1a1a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover { opacity: 0.85; }
+  &:active { transform: scale(0.97); }
+
+  &.primary-button{
+    block-size: auto;
+   background-color: royalblue; 
+   color :whitesmoke;
+  }
+  transition: all 0.2s ease-in-out;
+
+}
