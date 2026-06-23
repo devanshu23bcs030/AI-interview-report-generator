@@ -1,3 +1,33 @@
+.logout-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+
+  .logout-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #ef4444, #b91c1c);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+
+    &:hover {
+      background: linear-gradient(135deg, #dc2626, #991b1b);
+      box-shadow: 0 0 12px rgba(239, 68, 68, 0.5);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+
 .home {
   display: flex;
   gap: 24px;

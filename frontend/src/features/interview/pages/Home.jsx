@@ -1,10 +1,12 @@
 import "../styles/home.scss";
 import { useInterview } from "../hooks/useinterview";
+import { useAuth } from "../../auth/hooks/useauth";
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { handleLogout } = useAuth();
 
   const { loading, generateReport , reports } = useInterview();
 
@@ -26,17 +28,27 @@ const Home = () => {
     navigate(`/interview/${data.data._id}`);
   };
 
+  const handleLogoutClick = async () => {
+    await handleLogout();
+    navigate("/login");
+  };
+
   if (loading) {
     return (
       <div className="loading">
         <div className="spinner"></div>
-        <p>Generating your interview report...</p>
+        <p>Loading...</p>
       </div>
     );
   }
 
   return (
     <>
+    <div className="logout-container">
+      <button className="logout-btn" onClick={handleLogoutClick}>
+        Logout
+      </button>
+    </div>
     <main className="home">
       <div className="left">
         <textarea
