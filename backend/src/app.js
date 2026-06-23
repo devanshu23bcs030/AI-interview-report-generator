@@ -9,7 +9,10 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: true,
+    origin: [
+      "http://localhost:5173",
+      "https://ai-interview-report-generator-ktq6.vercel.app"
+    ],
     credentials: true,
   })
 );
